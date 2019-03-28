@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;no-cache" />
+    <!--<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">-->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0;no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="renderer" content="webkit;no-cache">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;no-cache">
+    <!--<base href="/">-->
+    <title>Matrix</title>
+    <script type="text/javascript">
+        var version = "?v=" + new Date().getTime();
+    </script>
+    <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var arr = ["/assets/css/style.css", "/assets/css/custom.css"];
+        for (var i = 0; i < arr.length; i++) {
+            document.write("<link rel='stylesheet' href=" + arr[i] + version + ">");
+        };
+    </script>
+    <script type="text/javascript" src="/assets/scripts/jquery1.12.4.min.js"></script>
+    <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/angular/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/angular/ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/assets/angular/oclazyload/src/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="/app/app.config.js"></script>
+    <script type="text/javascript">
+        var arr = [ "/app/route.config.js", "/service/directive.js", "/service/factory.js","/service/filter.js", "/app.js"];
+        for (var i = 0; i < arr.length; i++) {
+            document.write("<script src=" + arr[i] + version + "><\/script>");
+        }
+    </script>
+</head>
+
+<body ng-controller="mainController">
+    <div ng-include="'/components/common/header.html'"></div>
+    <div ui-view class="view" id="view"></div>
+    <div ng-include="'/components/common/footer.html'"></div>
+</body>
+
+</html>
